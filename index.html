@@ -3,6 +3,7 @@
 <html>
     <head>
         <title>Javascript Activity</title>
+        <link rel='stylesheet' href='bootstrap-3.3.6-dist/css/bootstrap.min.css'>
         <style>
             #myTable {
                 background-color:yellow;
@@ -10,12 +11,41 @@
         </style>
     </head>
     <body>
-        <h1 id='myTitle'>Title Heading</h1>
-        <div id='mySubTitle'>Subtitle</div>
-        <table border=1 id='myTable'></table>
-        <hr/>
-        <table border=1 id='myTable2'></table>
+        <div class=container>
+            <div class='col-sm-12'>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h1 id='myTitle'>Title Heading</h1>
+                        </div>
+                        <div class="panel-body">
+                            <div id='mySubTitle'>Subtitle</div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h1 id='myTitle'>First Table Using Javascript</h1>
+                        </div>
+                        <div class="panel-body">
+                            <table class=table border=1 id='myTable'></table>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h1 id='myTitle'>Second Table Using JSON</h1>
+                        </div>
+                        <div class="panel-body">
+                            <table class=table border=1 id='myTable2'></table>
+                        </div>
+                    </div>
+            </div>
+
+        
+        
+        
+        </div>
     </body>
     <script type='text/javascript' src='js/script.js'></script>
     <script type='text/javascript' src='js/data.js'></script>
+    <script type='text/javascript' src='bootstrap-3.3.6-dist/js/bootstrap.min.js'></script> 
 </html>

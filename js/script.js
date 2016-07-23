@@ -7,12 +7,12 @@ _subtitle.innerHTML = "My New SubTitle";
 var _table = document.getElementById('myTable');
 var row = 3;
 var col = 2;
-var arrNames = ['Reymar', 'Cindy', 'Kevin'];
-var arrGender = ['Male', 'Female', 'Male'];
+var arrNames = ['Reymar', 'Cindy', 'Kevin', 'Dan', 'Ed', 'Glester', 'Jeffrey'];
+var arrGender = ['Male', 'Female', 'Male', 'Male', 'Male', 'Male', 'Male'];
 var index = 0;
 var html = "<thead><tr><th>Name</th><th>Gender</th></tr></thead>";
 html += "<tbody>";
-for(x=0;x<row;x++){
+for(x=0;x<arrNames.length;x++){
   html+="<tr>";
 
   html+="<td>"+arrNames[index]+"</td>";
