@@ -40,12 +40,77 @@
                     </div>
             </div>
 
-        
-        
-        
+            <div id="myModal" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Resume Details</h4>
+                      </div>
+                      <div class="modal-body">
+                        <table class=table>
+                            <tr>
+                                <td><img id="ResumeID" /></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><b>Name</b></td>
+                                <td><p id="ResumeName"></p></td>
+                            </tr>
+                            <tr>
+                                <td><b>Email Address</b></td>
+                                <td><p id="ResumeEmail"></p></td>
+                            </tr>
+                            <tr>
+                                <td><b>Address</b></td>
+                                <td><p id="ResumeAddress">Test</p></td>
+                            </tr>
+                            <tr>
+                                <td><b>Occupation</b></td>
+                                <td><p id="ResumeOccupation">Test</p></td>
+                            </tr>
+                        </table>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
         </div>
     </body>
     <script type='text/javascript' src='js/script.js'></script>
     <script type='text/javascript' src='js/data.js'></script>
-    <script type='text/javascript' src='bootstrap-3.3.6-dist/js/bootstrap.min.js'></script> 
+    <script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+    <script type='text/javascript' src='bootstrap-3.3.6-dist/js/bootstrap.min.js'></script>
+    <script>
+        $(function(){
+            $("button").click(function() {
+                //alert(this.id); // or alert($(this).attr('id'));
+                $.ajax({
+                    url:'get_resume.php',
+                    type:'POST',
+                    data:{
+                        id:this.id
+                    },
+                    success:function(e){
+
+                        var obj = $.parseJSON(e);
+                        console.log(obj[0].name);
+                        $('#ResumeID').attr('src',obj[0].pic);
+                        $('#ResumeName').html(obj[0].name);
+                        $('#ResumeEmail').html(obj[0].name);
+                        $('#ResumeAddress').html(obj[0].address);
+                        $('#ResumeOccupation').html(obj[0].occupation);
+                    },
+                    complete:function(){
+
+                    }
+                });
+            });
+        });
+    </script> 
 </html>
